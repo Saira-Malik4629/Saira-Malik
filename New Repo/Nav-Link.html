@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav.link Child</title>
+    <!-- nth-of-type
+    nth-last-of-type
+    nth Child
+    nth last Child
+    first Child
+    last Child
+    Only Child
+    Only of type 
+    empty
+    not()-->
+
+    <style>
+        li:not(.abc) {
+            color: white;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="nav-link">Nav_Link no 1</li>
+        <li class="nav-link">Nav_Link no 2</li>
+        <li class="nav-link abc">Nav_Link no 3</li>
+        <li class="nav-link">Nav_Link no 4</li>
+        <li class="nav-link abc">Nav_Link no 5</li>
+    </ul>
+
+    <ol>
+        <li class="nav-link">Nav_Link6</li>
+        <li class="nav-link">Nav_Link7</li>
+        <li class="nav-link abc">Nav_Link8</li>
+        <li class="nav-link">Nav_Link9</li>
+        <li class="nav-link abc">Nav_Link10</li>
+    </ol>
+    <li class="nav-link">Nav_Link11</li>
+    <li class="nav-link">Nav_Link9</li>
+    <li class="nav-link abc">Nav_Link10</li>
+    <li class="nav-link">Nav_Link8</li>
+    <li class="nav-link abc">Nav_Link9</li>
+    <li class="nav-link">Nav_Link10</li>
+</body>
+</html>

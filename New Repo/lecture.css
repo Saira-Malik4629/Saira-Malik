@@ -1,0 +1,32 @@
+h1{
+    background-color: brown;
+    color: bisque;
+}
+.heading{
+
+}
+#para{
+
+}
+p{
+    background-color: blueviolet;
+    color: coral;
+  
+}
+pre {
+    background-color:burlywood ;
+}
+#parent{
+    background-color: aquamarine;
+    padding: 20PX;
+    height: 300PX;
+    width: 300PX;
+    border: 20PX SOLID BLACK;
+}
+#child{
+    background-color: aquamarine;
+    padding: 20PX;
+    height: 200PX;
+    width: 200PX;
+    border: 20PX SOLID BLACK;
+}
