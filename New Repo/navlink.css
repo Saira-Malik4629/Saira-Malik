@@ -1,0 +1,208 @@
+*{
+
+
+li:not(.abc) {
+    color: white;
+    background-color: brown;
+}
+a:link{
+    background-color:blue ;
+    text-decoration: none;
+    color: aqua;
+    display: block;
+}
+
+a:link{
+    color: red;
+    font-size: 22px;
+}
+.link:visited{
+    color: green;
+}
+.para{
+    color: red;
+    font-style:oblique;
+    background-color: blue;
+}
+#para:target{
+    background-color: blue;
+    color:white
+}
+}
+input:focus{
+background-color: aqua;
+}
+input:disabled{
+    background-color: rgb(35, 35, 244);
+color: white;
+text-decoration: none;
+}
+input:checked+label{
+    font-weight: 200px;
+    color: rgb(9, 241, 230);
+} */
+
+.data{
+    height: 190px;
+    width: 220px;
+    margin: 50px;
+    background-color: palegreen;
+    display: flex;
+    flex-direction: column;
+    transition: linear 1.5s ease-in-out infinite;
+    transform: rotateZ(40deg);
+}
+.data4{
+    height: 190px;
+    width: 220px;
+    margin: 50px;
+    background-color: aquamarine;
+}
+.Boxes{
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.data1{
+    height: 195px;
+    width: 200px;
+    flex-direction: row;
+    color: blueviolet;
+    background-color: plum;
+    animation: fadeout 1s  infinite;
+}
+@keyframes fadeout{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.data2{
+    height: 195px;
+    width: 200px;
+    flex-direction: row;
+    background-color: palegreen;
+    animation: zoomout 1s infinite;
+}
+@keyframes zoomout{
+   from{
+    transform: scale(1);
+    opacity: 0;
+   }
+   to{
+    transform: scale(0.5s);
+    opacity: 1;
+   }
+}
+.data3{
+    height: 195px;
+    width: 200px;
+    flex-direction: row;
+    color: blueviolet;
+    background-color: mediumslateblue;
+    animation: zoomout 1s infinite;
+}
+.data4{
+    height: 195px;
+    width: 200px;
+    background-color: saddlebrown;
+    padding: 0px;
+    margin: 0px;
+}
+.data5{
+    height: 195px;
+    width: 200px;
+    background-color: darkgreen;
+}
+.data6{
+    height: 195px;
+    width: 200px;
+    background-color: teal;
+}
+.data7{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(224, 11, 231);
+    border-radius: 50%;
+    transform: translateY();
+ animation:bounce 1s ease-in-out infinite;
+}
+@keyframes bounce{
+    0%,100%{transform: translatey(0);}
+    50%{transform: translatey(50px);}
+ }
+
+@keyframes zoomout{
+    from{
+        transform:scale(1s);
+        opacity: 0;
+    }
+    to{
+        transform: scale(0.5s);
+        opacity: 1;
+    }
+}
+.black{
+    background-color: mediumturquoise;
+    height: 600px;
+    width: 100%;
+    /* /* display: flex;
+    justify-content: space-evenly; */
+}
+@media (min-width:200px) and (max-width:500px) {
+    .black{
+       background-color: rgb(231, 187, 11);
+       
+      }
+   }
+   @media (min-width:769px) and (max-width:1024px) {
+    .black{
+       background-color: rgb(62, 50, 2);
+      }
+   }
+.black6{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding-top: 20px;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.black1{
+    background-color: cadetblue;
+    height: 195px;
+    width: 350px;
+}
+@media (min-width:400px) and (max-width:966px) {
+    .black1{
+       background-color: rgb(25, 210, 148);
+      }
+   }
+.black2{
+    background-color: crimson;
+    height: 195px;
+    width: 350px;
+}
+@media (min-width:200px) and (max-width:500px) {
+ .black2{
+    background-color: rgb(4, 19, 14);
+   }
+}
+.black3{
+    height: 200px;
+    width: 100%px;   
+}
+@media (min-width:481px) and (max-width:768px) {
+    .black3{
+       background-color: rgb(15, 231, 11);
+       font-style: italic;
+       font-size: x-large;
+      }
+   }
