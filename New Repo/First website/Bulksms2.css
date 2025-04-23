@@ -165,3 +165,90 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
+  .sec5 {
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.sec5 h1 {
+    color: #044da1;
+    font-size: x-large;
+    font-family: "Open Sans", sans-serif;
+}
+
+.sec5 p {
+    color: #6c849e;
+}
+
+/* .sec5_box {
+    width: 100%;
+} */
+
+.row {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    /* justify-content: space-around; */
+}
+
+.badges img {
+    width: 100%;
+}
+
+#review iframe {
+    background-color: #e9eff7;
+    height: 392px;
+    position: relative;
+    width: 94%;
+    border: solid 1px #C8D5E2;
+    border-radius: 5px;
+}
+
+#btn {
+    border: none;
+    border-radius: 10px;
+    background-color: #ff7900;
+    padding: 10px 10px;
+    color: #fff;
+}
+
+svg {
+    width: 15px;
+    color: #fff;
+}
+
+.case_study {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: space-evenly;
+}
+.case img {
+    width: 76%;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+}
+.case:hover img{
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+.active{
+    text-decoration: none;
+}
+.footer-bottom{
+    text-decoration: none;
+}
+.IMAGE{
+    background-image: url(https://www.bulksms.com/images/call-to-action111.png);
+    background-color: blue;
+    width: 100%;
+    height: auto;
+}
+
+
+

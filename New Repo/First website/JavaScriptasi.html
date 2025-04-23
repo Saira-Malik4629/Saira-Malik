@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+    <link rel="stylesheet" href="/JavaScript.css">
+</head>
+<body>
+
+
+      <div class="main-container">
+    <!-- Left Section -->
+    <div class="box1 left-sidebar">
+        <h1>FunctionBar</h1>
+        <div >
+            <input type="text" id="bg_input" placeholder="Background Color" />
+            <button style="background-color: palegreen;" onclick="applyclr()">Click Here</button>
+          </div>
+
+          
+          <div >
+            <input type="text" id="text_direction" placeholder="Change Text Alingment" />
+            <button style="background-color: pink;"    onclick="align()" >Click Here</button>
+          </div>
+
+          <div >
+            <input type="text" id="text_color" placeholder="Change Text Color" />
+            <button  style="background-color: burlywood;"   onclick="txtclr()" >Click Here</button>
+          </div>
+
+          <div >
+            <input type="text"  id="box_wid" placeholder="Change Box Width" />
+            <button style="background-color: lawngreen;"   onclick="boxwidth()"  >Click Here</button>
+          </div>
+          <div >
+            <input type="text" id="height_input" placeholder="Change Box Height" />
+            <button style="background-color: palevioletred;"   onclick="background_height()">Click Here</button>
+          </div>
+
+          <div >
+            <input type="text" id="flexdir_input" placeholder="Flex Direction" />
+            <button  style="background-color: greenyellow;"  onclick="flex_dir()">Click Here</button>
+          </div>
+
+          <div >
+            <input type="text" id="gap_input" placeholder="Gap" />
+            <button  style="background-color: rgb(47, 255, 61);"  onclick="applygap()">Click Here</button>
+          </div>
+
+          <div >
+            <input type="text" id="Justify_Content" placeholder="Justify_Content" />
+            <button style="background-color: aquamarine;"  onclick="justify()">Click Here</button>
+          </div>
+        
+    </div>
+    <!-- Right section -->
+    <div id="right_section" class="rightside">
+      <!-- Box2 -->
+      <div class="box2"><p>Human beauty is a blend of physical appearance and inner grace. It shines through kindness, confidence, and the way someone carries themselves. True beauty isn't defined by perfect features, but by authenticity and compassion. A warm smile or gentle gesture often leaves a deeper impression than looks alone. In every culture, human beauty reflects uniqueness and the spirit within.</p></div>
+
+      <!-- Box3s -->
+      <div class="box3-container" id="three-boxes">
+        <div class="boxes"><p>Human beauty is more than what the eyes can see; it is a reflection of depth,
+             spirit, and experience. While society often emphasizes symmetry and polished appearances,
+              true beauty radiates from the uniqueness of a person.</p> </div>
+        <div class="boxes"><p>There is something undeniably beautiful about authenticity. When people embrace who
+             they truly are — their quirks, their passions, their past — they emit a kind of light that can't
+              be mimicked or manufactured. Confidence that stems from self-acceptance is magnetic, and
+               vulnerability becomes a strength.</p></div>
+        <div class="boxes"><p>Kindness is perhaps the most radiant form of beauty. A gentle word, a compassionate 
+            act, or a patient heart can illuminate a room more than any physical trait. Beauty, when tied to 
+            empathy and understanding, becomes something that uplifts not only the one who holds it but 
+            everyone around them.</p></div>
+      </div>
+    </div>
+  </div>
+   
+  
+  <script>
+
+
+
+function applyclr() {
+            let color = document.getElementById("bg_input").value;
+            document.getElementById("right_section").style.backgroundColor = color;
+        }
+function align() {
+            let txt = document.getElementById("text_direction").value;
+            document.getElementById("right_section").style.textAlign = txt;
+        }
+function txtclr () {
+            let textclr = document.getElementById("text_color").value;
+            document.getElementById("right_section").style.color = textclr;
+        }
+function boxwidth () {
+            let bwidth = document.getElementById("box_wid").value;
+            document.getElementById("right_section").style.width = bwidth;
+        }
+function background_height () {
+            let bgheight = document.getElementById("height_input").value;
+            document.getElementById("right_section").style.height = bgheight;
+        }
+function flex_dir () {
+            let bflex_dir = document.getElementById("flexdir_input").value;
+            document.getElementById("three-boxes").style.flexDirection = bflex_dir;
+        }
+function applygap () {
+            let bg_gap = document.getElementById("gap_input").value;
+            document.getElementById("three-boxes").style.gap = bg_gap;
+        }
+function justify () {
+            let content = document.getElementById("Justify_Content").value;
+            document.getElementById("three-boxes").style.justifyContent =content ;
+        }
+   
+
+
+  </script>
+
+
+
+
+</body>
+</html>
