@@ -51,29 +51,61 @@
             background-color: rgb(8, 218, 218);
             padding: 50px;
         } 
+        .ancestors{
+    border: 5px solid black;
+    border-radius: 10px;
+ }
+
     </style>
 </head>
 
-<body>
+<body >
+    <!-- <h1 class="ancestors"> Heading
+        <div>
+            <ul>
+                <li class="b">Hello
+                    <span></span>
+                </li>
+                <li class="a">
+                    <span></span>
+                </li>
+                <li>
+                    <span></span>
+                </li>
+            </ul>
+         </div>   
+    </h1> -->
+    
+    
+    
     <div class="box0">
 <div class="box">Box</div>
 </div>
 </br>
 <div class="buttons">
-<button id="btn">DBL Clik</button>
+<button id="btn">DBL Click</button>
  
 <button id="click">Toggle</button>
 
-<button id="cap">Slid Up</button>
+<button id="cap">Cap</button>
 
 <button id="fadebtn">Fade Out</button>
 
 <button id="attri">.Attr</button>
 <button id="Fadein"> Fade In</button>
 
+<!-- <input type="text">
+<button class="custom">Click</button> -->
+
+<input type="text" id="inputField" placeholder="Enter your text here">
+<button class="custom">Click</button>
+
+
 
 </div>
-<input type="text">
+
+
+
 <!-- <div class="more">
 
 <button id="">Attr</button>
@@ -88,72 +120,6 @@
 
 <button id="attri">Attr</button>
 </div> -->
-
-<!-- <script> -->
-
-
-
-<!-- // console.log("Resolved Promise")
-// consol.log("Resolved Statement")
-
-
-//     let p= new promise ((resolve, reject) => {
-//         setTimeout(()=> resolve("p1 is resolved"));
-//     })
-
-
-
-
-//     console.log(p)
-// let p2 = new promise ((resolve, reject)=>{
-//     resolve('Promise resolved')
-// })
-
-// console.log(p2)
-
-// console.log("after promise")
-// console.log("after promise")
-
-
-// console.log("before promise")
-// console.log("before promise")
-// let p =new Promise((resolve, reject) => {
-//     setTimeout(()=> { resolve('promise resolved after 3 seconds');
-// },3000)
-    
-// }) 
-// console.log(p)
-//     console.log("after promise")
-//     console.log("after promise")
-
-
-
-
-console.log("before promise")
-console.log("before promise")
-let p =new Promise((resolve, reject) => {
-    setTimeout(()=>{
-        resolve('promise resolved after 3 seconds');
-    },3000)
-    
-}) 
-
-p.then((value) => {
-
-    document.write(value)
-    // console.log(err + "Promise Rejected")
-})
-p.catch(err) => {
-    console.log(err+"promise is fulfilled")
-}
-
-
-console.log(p)
-    console.log("after promise")
-    console.log("after promise") -->
-
-        
-    <!-- </script> -->
 
 
 
