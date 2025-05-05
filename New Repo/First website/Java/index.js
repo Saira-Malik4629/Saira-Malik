@@ -1,3 +1,4 @@
+//Posted story Code
 document.querySelectorAll('.like-btn').forEach(function(btn) {
     btn.addEventListener('click', function () {
       btn.classList.toggle('fas');
@@ -6,7 +7,7 @@ document.querySelectorAll('.like-btn').forEach(function(btn) {
     });
   });
 
-
+// Follow Button changing code
   document.addEventListener('DOMContentLoaded', function () {
     const followButtons = document.querySelectorAll('.suggestion .btn');
 
@@ -22,3 +23,34 @@ document.querySelectorAll('.like-btn').forEach(function(btn) {
       });
     });
   });
+
+
+  // Story Upload Section code
+  document.getElementById('storyUpload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const imageURL = URL.createObjectURL(file);
+      document.getElementById('storyImage').src = imageURL;
+    }
+  });
+
+  //Code to sync image
+
+  const storyImage = document.getElementById('storyImage');
+  const storyUpload = document.getElementById('storyUpload');
+  const storyPreview = document.getElementById('storyPreview');
+
+  storyUpload.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const imageURL = URL.createObjectURL(file);
+      storyImage.src = imageURL;
+      storyPreview.src = imageURL;
+    }
+  });
+
+  // Optional: Set preview image on click if already uploaded
+  storyImage.addEventListener('click', function () {
+    storyPreview.src = storyImage.src;
+  });
+

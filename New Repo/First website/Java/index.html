@@ -10,53 +10,66 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<div class="modal fade" id="storyModal" tabindex="-1" aria-labelledby="storyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark border-0">
+      <div class="modal-body text-center p-0">
+        <img id="storyPreview" src="" class="img-fluid rounded" alt="Story Preview">
+      </div>
+    </div>
+  </div>
+</div>
+
 <body>
 
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="logo">
-          <img src="https://i.pinimg.com/736x/d9/3a/db/d93adb1816eb64a808298982c7d6ad89.jpg" alt="App Logo">
-        </div>
+      <div class="sidebar d-flex flex-column align-items-start position-fixed h-100 px-3 py-4">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="https://i.pinimg.com/736x/d9/3a/db/d93adb1816eb64a808298982c7d6ad89.jpg" alt="App Logo" width="120">
+  </div>
 
-        <a href="#" class="menu-item">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fas fa-search"></i>
-          <span>Search</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fas fa-compass"></i>
-          <span>Explore</span>
-        </a>
-        <a href="http://127.0.0.1:5500/insta.html" class="menu-item">
-          <i class="fas fa-clapperboard"></i>
-          <span>Reels</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fab fa-facebook-messenger"></i>
-          <span>Messages</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="far fa-heart"></i>
-          <span>Notifications</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="far fa-square-plus"></i>
-          <span>Create</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="far fa-user"></i>
-          <span>Profile</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fas fa-bars"></i>
-          <span>More</span>
-        </a>
-      </div>
+  <!-- Navigation Menu -->
+  <a href="#" class="menu-item mb-3 d-flex align-items-center">
+    <i class="fas fa-home me-3"></i><span>Home</span>
+  </a>
+  <a href="#" class="menu-item mb-3 d-flex align-items-center">
+    <i class="fas fa-search me-3"></i><span>Search</span>
+  </a>
+  <a href="#" class="menu-item mb-3 d-flex align-items-center">
+    <i class="fas fa-compass me-3"></i><span>Explore</span>
+  </a>
+  <a href="http://127.0.0.1:5500/insta.html" class="menu-item mb-3 d-flex align-items-center">
+    <i class="fas fa-clapperboard me-3"></i><span>Reels</span>
+  </a>
+  <a href="#" class="menu-item mb-3 d-flex align-items-center">
+    <i class="fab fa-facebook-messenger me-3"></i><span>Messages</span>
+  </a>
+  <a href="#" class="menu-item mb-3 d-flex align-items-center">
+    <i class="far fa-heart me-3"></i><span>Notifications</span>
+  </a>
+  <a href="#" class="menu-item mb-3 d-flex align-items-center">
+    <i class="far fa-square-plus me-3"></i><span>Create</span>
+  </a>
+  <a href="#" class="menu-item mb-3 d-flex align-items-center">
+    <img 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZYL4AwU-8q2-ligC_uo_RcylU4FS2gqVdDQ&s" 
+      alt="Profile" 
+      class="profile-img me-3"
+    >
+    <span>Profile</span>
+  </a>
+
+  <!-- Push last item to bottom -->
+  <div class="mt-auto w-100">
+    <a href="#" class="menu-item d-flex align-items-center">
+      <i class="fas fa-bars me-3"></i><span>More</span>
+    </a>
+  </div>
+</div>
+
 
       <!-- Main Feed -->
       <div class="col-md-7 story-main">
@@ -64,17 +77,26 @@
         <div class="stories d-flex overflow-auto hide-scrollbar bg-white">
 
           <!--My Story Section-->
-          <div class="text-center me-3">
-            <div class="position-relative">
+          <div class="text-start me-3">
+            <div class="position-relative" style="cursor: pointer;">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNEwhDA5gSs--nPcOqBiKhg2kP-18mbRbcY1vT9DLaPoZS1KpdxC8SkGS6EQvMVQUfMtE&usqp=CAU"
-                alt="your story" class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover;">
+                id="storyImage"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZYL4AwU-8q2-ligC_uo_RcylU4FS2gqVdDQ&s"
+                alt="your story"
+                class="rounded-circle"
+                style="width: 60px; height: 60px; object-fit: cover;"
+                data-bs-toggle="modal"
+                data-bs-target="#storyModal"
+              >
               <span
                 class="position-absolute bottom-0 end-0 bg-primary text-white rounded-circle d-flex justify-content-center align-items-center"
+                onclick="document.getElementById('storyUpload').click(); event.stopPropagation();"
                 style="width: 20px; height: 20px; font-size: 14px; border: 2px solid white;">+</span>
             </div>
-            <p class="small text-center mt-1">Your Story</p>
+            <p class="small text-center mt-1">My story</p>
+            <input type="file" id="storyUpload" accept="image/*" style="display: none;">
           </div>
+          
 
           <!-- Single Story Item -->
           <div class="text-center me-3">
@@ -235,6 +257,195 @@
               <p class="text-muted" style="font-size: 12px;">4 hours ago</p>
             </div>
           </div>
+<!-- Instagram-style Post -->
+<div class="main card mb-4">
+  <!-- Post Header -->
+  <div class="card-header d-flex align-items-center bg-white border-0">
+    <img src="https://i.pinimg.com/736x/24/48/3b/24483ba7a7bd532a7c6d195cec6109ac.jpg" alt="user" class="rounded-circle me-3" width="40" height="40">
+    <strong class="me-auto">LensLoom</strong>
+    <button class="btn btn-sm"><i class="fas fa-ellipsis-h"></i></button>
+  </div>
+
+  <!-- Post Image -->
+  <img src="https://i.pinimg.com/736x/0c/9e/f8/0c9ef8b1c5d257c0b28b7f6060b2af5c.jpg" class="card-img-top" alt="Post Image" height="500px">
+
+  <!-- Post Actions -->
+  <div class="card-body p-2">
+    <div class="d-flex justify-content-between mb-2">
+      <div>
+        <i class="far fa-heart fa-lg me-3"></i>
+        <i class="far fa-comment fa-lg me-3"></i>
+        <i class="far fa-paper-plane fa-lg"></i>
+      </div>
+      <i class="save far fa-bookmark fa-lg"></i>
+    </div>
+
+    <!-- Likes -->
+    <p class="mb-1"><strong>1,284 likes</strong></p>
+
+    <!-- Caption -->
+    <p class="mb-1">
+      <strong>jane_doe</strong>"Capturing moments, one frame at a time.<br>
+      Every photo tells a story—what’s yours?"<br>
+      #PhotographyLovers #VisualStorytelling #CapturedMoments
+    </p>
+
+    <!-- Comment preview -->
+    <p class="text-muted mb-1" style="font-size: 14px;">View all 56 comments</p>
+
+    <!-- Timestamp -->
+    <p class="text-muted" style="font-size: 12px;">2 hours ago</p>
+  </div>
+</div>
+
+
+<div  id="postFeed">
+
+  <!-- Post 1 -->
+   
+  <div class="card">
+    <div class="card-header d-flex align-items-center bg-white border-0">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="40" height="40">
+      <strong class="me-auto">jane_doe</strong>
+      <button class="btn btn-sm"><i class="fas fa-ellipsis-h"></i></button>
+    </div>
+    <img src="https://i.pinimg.com/736x/20/7f/72/207f72b46ad8b45a62198e1514f6b5a8.jpg" class="card-img-top" alt="Post Image">
+    <div class="card-body p-2">
+      <div class="d-flex justify-content-between mb-2">
+        <div>
+          <i class="far fa-heart fa-lg me-3 like-btn"></i>
+          <i class="far fa-comment fa-lg me-3"></i>
+          <i class="far fa-paper-plane fa-lg"></i>
+        </div>
+        <i class="save far fa-bookmark fa-lg"></i>
+      </div>
+      <p class="mb-1"><strong>1,284 likes</strong></p>
+      <p class="mb-1"><strong>jane_doe</strong> "Pure sound. Zero distractions.<br>
+       🎧 AirPods – where simplicity meets power."</p>
+      <p class="text-muted mb-1" style="font-size: 14px;">View all 56 comments</p>
+      <p class="text-muted" style="font-size: 12px;">2 hours ago</p>
+    </div>
+  </div>
+
+  <!-- Post 2 -->
+  <div class="card">
+    <div class="card-header d-flex align-items-center bg-white border-0">
+      <img src="https://randomuser.me/api/portraits/men/36.jpg" class="rounded-circle me-3" width="40" height="40">
+      <strong class="me-auto">mark_rider</strong>
+      <button class="btn btn-sm"><i class="fas fa-ellipsis-h"></i></button>
+    </div>
+    <img src="https://i.pinimg.com/736x/bd/81/05/bd81052b37c26be23bb4263d82d0009f.jpg" class="card-img-top" alt="Post Image">
+    <div class="card-body p-2">
+      <div class="d-flex justify-content-between mb-2">
+        <div>
+          <i class="far fa-heart fa-lg me-3 like-btn"></i>
+          <i class="far fa-comment fa-lg me-3"></i>
+          <i class="far fa-paper-plane fa-lg"></i>
+        </div>
+        <i class="save far fa-bookmark fa-lg"></i>
+      </div>
+      <p class="mb-1"><strong>842 likes</strong></p>
+      <p class="mb-1"><strong>mark_rider</strong> "Step into style.<br>
+       Because every great journey begins with the right pair."<br>
+       #ShoeGameStrong #StreetStyleVibes #WalkInStyle
+       
+       </p>
+      <p class="text-muted mb-1" style="font-size: 14px;">View all 30 comments</p>
+      <p class="text-muted" style="font-size: 12px;">4 hours ago</p>
+    </div>
+  </div>
+
+  <!-- post - 3 -->
+
+  <div class="card">
+   <div class="card-header d-flex align-items-center bg-white border-0">
+     <img src="https://i.pinimg.com/736x/46/fe/3e/46fe3e43c9762c8e5971f1a8c729f818.jpg" class="rounded-circle me-3" width="40" height="40">
+     <strong class="me-auto">Michel_Jhons</strong>
+     <button class="btn btn-sm"><i class="fas fa-ellipsis-h"></i></button>
+   </div>
+   <img src="https://i.pinimg.com/736x/21/78/da/2178da06ff78dca0090a5fc72d250db5.jpg" class="card-img-top" alt="Post Image" height="500px">
+   <div class="card-body p-2">
+     <div class="d-flex justify-content-between mb-2">
+       <div>
+         <i class="far fa-heart fa-lg me-3 like-btn"></i>
+         <i class="far fa-comment fa-lg me-3"></i>
+         <i class="far fa-paper-plane fa-lg"></i>
+       </div>
+       <i class="save far fa-bookmark fa-lg"></i>
+     </div>
+     <p class="mb-1"><strong>1,284 likes</strong></p>
+     <p class="mb-1"><strong>jane_doe</strong> "Small things. Big imagination.<br>
+       Miniatures that bring stories to life!"<br>
+       #MiniWorlds #TinyScenes #CreativeMiniatures</p>
+     <p class="text-muted mb-1" style="font-size: 14px;">View all 56 comments</p>
+     <p class="text-muted" style="font-size: 12px;">2 hours ago</p>
+   </div>
+ </div>
+
+ <!-- post- 4 -->
+
+ <div class="card">
+   <div class="card-header d-flex align-items-center bg-white border-0">
+     <img src="https://i.pinimg.com/736x/5d/a3/3c/5da33cd9ecabb360b53d7bf34f1f1046.jpg" class="rounded-circle me-3" width="40" height="40">
+     <strong class="me-auto">VectorVibes</strong>
+     <button class="btn btn-sm"><i class="fas fa-ellipsis-h"></i></button>
+   </div>
+   <img src="https://i.pinimg.com/736x/82/f3/7f/82f37f0e54ec2c6191e7e695def0caf3.jpg" class="card-img-top" alt="Post Image" height="500px">
+   <div class="card-body p-2">
+     <div class="d-flex justify-content-between mb-2">
+       <div>
+         <i class="far fa-heart fa-lg me-3 like-btn"></i>
+         <i class="far fa-comment fa-lg me-3"></i>
+         <i class="far fa-paper-plane fa-lg"></i>
+       </div>
+       <i class="save far fa-bookmark fa-lg"></i>
+     </div>
+     <p class="mb-1"><strong>1,284 likes</strong></p>
+     <p class="mb-1"><strong>jane_doe</strong> "When tiny minds meet a tech giant.<br>
+       Miniature meets Google — where imagination gets indexed."<br>
+       #MiniWorld #GoogleMiniature #ThinkBigStaySmall #CreativeConcepts</p>
+     <p class="text-muted mb-1" style="font-size: 14px;">View all 56 comments</p>
+     <p class="text-muted" style="font-size: 12px;">2 hours ago</p>
+   </div>
+ </div>
+
+<!-- Video post -->
+
+ <div class="card">
+  <div class="card-header d-flex align-items-center bg-white border-0">
+    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="40" height="40">
+    <strong class="me-auto">jane_doe</strong>
+    <button class="btn btn-sm"><i class="fas fa-ellipsis-h"></i></button>
+  </div>
+
+  <!-- Autoplaying Video -->
+  <video class="card-img-top" autoplay muted loop playsinline style="max-height: 500px; width: 100%; object-fit: cover;">
+    <source src="https://cdn.pixabay.com/video/2025/04/29/275633_tiny.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="card-body p-2">
+    <div class="d-flex justify-content-between mb-2">
+      <div>
+        <i class="far fa-heart fa-lg me-3 like-btn"></i>
+        <i class="far fa-comment fa-lg me-3"></i>
+        <i class="far fa-paper-plane fa-lg"></i>
+      </div>
+      <i class="far fa-bookmark fa-lg"></i>
+    </div>
+    <p class="mb-1"><strong>1,284 likes</strong></p>
+    <p class="mb-1"><strong>jane_doe</strong> Chill vibes 🔥 #WeekendFeels</p>
+    <p class="text-muted mb-1" style="font-size: 14px;">View all 56 comments</p>
+    <p class="text-muted" style="font-size: 12px;">2 hours ago</p>
+  </div>
+</div>
+
+
+
+</div>
+<!-- POST FEED END -->
+
+
 
         </div>
         <!-- POST FEED END -->
@@ -248,7 +459,7 @@
                <!--Profile Switch Section-->
         <div class="suggestion">
           <div class="d-flex align-items-center">
-            <img src="https://bkacontent.com/wp-content/uploads/2016/06/Depositphotos_31146757_l-2015.jpg" alt="Friend"
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZYL4AwU-8q2-ligC_uo_RcylU4FS2gqVdDQ&s" alt="Friend"
               class="rounded-circle">
             <div>
               <p class="mb-0"><strong>hania6498</strong></p>
@@ -302,7 +513,7 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbWiUh50QuGeDsvkxWjVEr42uTjtRAR9FDoJL_sc3iqvaRu_2ltSQUJRZ4fX86nGTUhAE&usqp=CAU" alt="Friend"
               class="rounded-circle">
             <div>
-              <p class="mb-0"><strong>Hi_marry</strong></p>
+              <p class="mb-0"><strong>Hi_Acmarry</strong></p>
               <small class="text-muted">Followed by anna</small>
             </div>
             <button class="btn btn-sm ms-auto" style="color: rgb(104, 96, 209);">Follow</button>
